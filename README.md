@@ -22,13 +22,15 @@ A traditional RAG process includes three main phases indexing, retrieval, and ge
 
 ## **Deployment**
 
-Use Python 3.10.4
+Use Python 3.10.12
 
-1. Upload embeddings that you want to align in the 'input' folder. E.g. we use in our experiments embeddings from [Dinu et al.](https://wiki.cimec.unitn.it/tiki-index.php?page=CLIC). You can use the get_data.sh from [Artetxe et al.](https://github.com/artetxem/vecmap/tree/master).
-2. Upload the file with stopwords in the 'utils' folder, if needed.
-3. Run CREATE_TRANSLATION_DICTIONARY.py
-4. Run CREATE_DICT_MOST_SIMILAR.py
-5. Run ALIGNMENT.py
+Example with Financial PhraseBank data
+
+1. Run FPB/PREPROCESS/compute_subsentences_of_fpb_densex.py to compute propositions for the input dataset
+2. Run FPB/main.py to perform the enrichment
+
+After creating the enriched dataset, you can reproduce the ablation study by running the scripts located in the ABLATION folder. 
+Additionally, you can replicate the evaluation experiments described in the original published article.
 
 ## References
 ```
